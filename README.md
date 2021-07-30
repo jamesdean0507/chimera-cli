@@ -1,6 +1,7 @@
 # chimera-cli
 
 Current Goals:
+
 	- Command line interface to automate the scraping of multiple social networks to generate business leads and target market/demographic info. 
 	- have multiple queries for users to select from cli
 	- multiprocessing/proxy support for each action (as required) to avoid blocks and action limits
