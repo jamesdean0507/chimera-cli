@@ -1,0 +1,9 @@
+# Requirements <pip3 install -r requirements.txt>#
+beautifulsoup4
+bs4
+numpy
+pandas
+selenium
+requests
+webdriver-manager
+tqdm
