@@ -1,6 +1,9 @@
 Main Menu:
  - Data Recon Tasks/Automation Flows
     - 
+        - run options (multiprocessed or no?)
+        - proxy options
+        - login/api key options
  - Data Tranform/Analysis
     -
  - Data Export Options
