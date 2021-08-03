@@ -1,0 +1,7 @@
+Main Menu:
+ - Data Recon Tasks/Automation Flows
+    - 
+ - Data Tranform/Analysis
+    -
+ - Data Export Options
+    - 
