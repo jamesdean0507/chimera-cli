@@ -1,5 +1,9 @@
 Main Menu:
- - Data Recon Tasks/Automation Flows
+ - Data Recon Sites/Tasks/Automation Flows
+    - Instagram 
+      - Username-check
+    - Facebook
+      - 
     - 
         - run options (multiprocessed or no?)
         - proxy options
