@@ -2,7 +2,7 @@
 
 Current Goals:
 
-	- Command line interface to automate the scraping of multiple social networks to generate business leads and target market/demographic info. 
+	- Command line interface to automate the scraping of multiple social networks and open source databases 
 	- have multiple queries for users to select from cli
 	- multiprocessing/proxy support for each action (as required) to avoid blocks and action limits
 	- Store scraped information in local SQL, at the end of scrape return data in csv5.
