@@ -1,0 +1,22 @@
+# Geo Scrape
+
+Overview: Scrape from multiple sources to create readable data(csv) and generate shapefiles*
+
+Organization:
+    - main_geo.py
+        - Call shapefile funcs or newdata funcs or both based on query
+        - contain option to input query, determine # of results returned (or pages scraped per site/scrape depth), and wether to dl shapefile or j concat data
+        - input query, scrape all data from shapefiles returned,
+   
+    -shapefile_scraper.py
+        - contains main scraping functions for standard sites
+        -   main scraping general layout:
+                - scrape data from given site, organize into pandas dataframe to be returned
+                - export csv from all scrapes; Shapefile type, region, category, source site
+   
+    - newdata_scraper
+        - advanced search for specific information from search engine databases
+        - shodan 
+            - search + scrape shodan for information (shipping/building/transport) 
+            - output csv with data or create shapefile for import
+            - if possible give option to run in bckrnd and update shapefule in real time
