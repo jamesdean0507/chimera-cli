@@ -2,13 +2,21 @@ Main Menu:
  - Data Recon Sites/Tasks/Automation Flows
     - Instagram 
       - Username-check
+      - email recon
     - Facebook
       - 
-    - 
-        - run options (multiprocessed or no?)
+      
+    - Geo-mapping
+      - scrape from publicly available shapefile sites + search engines(shodan, etc) 
+      to provide up to date map data
+      - organize data into multiple output options for analysis
+
+    -run options (multiprocessed or no?)
         - proxy options
         - login/api key options
+        
  - Data Tranform/Analysis
-    -
+    - Allow options to use output from certain actions as input for others; chain automations
+
  - Data Export Options
     - 
