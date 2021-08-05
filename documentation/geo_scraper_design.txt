@@ -3,17 +3,42 @@
 Overview: Scrape from multiple sources to create readable data(csv) and generate shapefiles*
 
 Organization:
+    
     - main_geo.py
         - Call shapefile funcs or newdata funcs or both based on query
         - contain option to input query, determine # of results returned (or pages scraped per site/scrape depth), and wether to dl shapefile or j concat data
-        - input query, scrape all data from shapefiles returned,
+        - input query, scrape all data from shapefiles returned
+        - input query options (what to scrape from)
+            - data type (CODs, Sub-national, Geodata, Administrative Divisions, Datasets on request (HDX Connect), Datasets with Quick Charts, Datasets with Showcase, Datasets with HXL tags, NEW Archived datasets), 
+            - location (country)
+            - filetype(s) (ARC/INFO Grid, CSV, DOCX, Garmin IMG, GeoJSON, GeoTIFF, Geodatabase, Geopackage, JSON, KML, KMZ, OSMand OBF, PDF, SHP, TXT, TopoJSON, Web App, XLS, XLSX, zipped img, zipped kml)
+            - Organizations
+            - tags
+            - if filetype specified, download files? (shapefile)
+            - number of pages/data to scrape
+        - returned data
+            - file with all scraped files
+            - csv with information for each result
+                - Title
+                - keywords found (gis, etc)
+                - found attributes
+                - all metadata
+
    
-    -shapefile_scraper.py
+    -site_scraper.py
         - contains main scraping functions for standard sites
-        -   main scraping general layout:
+        - main data scraping general layout:
                 - scrape data from given site, organize into pandas dataframe to be returned
                 - export csv from all scrapes; Shapefile type, region, category, source site
    
+    - downloader.py
+        - contains funcs for downloading specific files (based on query) for each scraped source
+        - organize all scraped/downloaded files to one folder
+        - visualize dl process on command line (make it cute~!)
+   
+    - sites to scrape:
+        - https://data.humdata.org/search?ext_geodata=1&q=&ext_page_size=25
+    
     - newdata_scraper
         - advanced search for specific information from search engine databases
         - shodan 
