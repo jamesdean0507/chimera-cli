@@ -37,6 +37,9 @@ Organization:
         - visualize dl process on command line (make it cute~!)
    
     - sites to scrape:
+        - https://www.diva-gis.org/
+        - https://www.naturalearthdata.com/
+        - https://ec.europa.eu/eurostat/web/gisco/geodata
         - https://data.humdata.org/search?ext_geodata=1&q=&ext_page_size=25
     
     - newdata_scraper.py
@@ -46,7 +49,7 @@ Organization:
             - output csv with data or create shapefile for import
             - if possible give option to run in bckrnd and update shapefule in real time
     - data_transforms.py
-        - organize data from csv + shapefiles using pandas + geopandas, matplotlib
+        - organize data from csv + shapefiles using pandas + geopandas (maybe .plot), matplotlib
         - prompt user to choose one(or several) of data transform options (concat, find similarities, etc)
         - data transforms:
             - data transform action is automated in a way which makes up for duplicates, and multiple data points
