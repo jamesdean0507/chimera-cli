@@ -39,9 +39,17 @@ Organization:
     - sites to scrape:
         - https://data.humdata.org/search?ext_geodata=1&q=&ext_page_size=25
     
-    - newdata_scraper
+    - newdata_scraper.py
         - advanced search for specific information from search engine databases
         - shodan 
             - search + scrape shodan for information (shipping/building/transport) 
             - output csv with data or create shapefile for import
             - if possible give option to run in bckrnd and update shapefule in real time
+    - data_transforms.py
+        - organize data from csv + shapefiles using pandas + geopandas
+        - prompt user to choose one(or several) of data transform options (concat, find similarities, etc)
+        - data transforms:
+            - data transform action is automated in a way which makes up for duplicates, and multiple data points
+            - ensure clean output
+        - once scrape is done, prompt user to choose output filetypes 
+        - convert data to either shapefiles, csvs, or both, based on input
