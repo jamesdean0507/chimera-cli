@@ -46,7 +46,7 @@ Organization:
             - output csv with data or create shapefile for import
             - if possible give option to run in bckrnd and update shapefule in real time
     - data_transforms.py
-        - organize data from csv + shapefiles using pandas + geopandas
+        - organize data from csv + shapefiles using pandas + geopandas, matplotlib
         - prompt user to choose one(or several) of data transform options (concat, find similarities, etc)
         - data transforms:
             - data transform action is automated in a way which makes up for duplicates, and multiple data points
