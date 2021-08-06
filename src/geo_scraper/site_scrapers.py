@@ -77,10 +77,7 @@ def diva_scraper(website, countrylist, taglist):
 	            time.sleep(1)
 	            okbutton=driver.find_element_by_name('OK')
 	            okbutton.click()
-				
-	            time.sleep(6)
-
-	        
+	            time.sleep(3)   
 	except:
 	    print('failed to scrape diva')
 
