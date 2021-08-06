@@ -101,7 +101,7 @@ def diva_scraper(website, countrylist, taglist):
 			for tag in taglist:
 				try:
 					driver.get(website)
-					print(country,tag)
+					# print(country,tag)
 					time.sleep(1)
 					ctlistopen=driver.find_element_by_name('cnt')
 					selectcountry= Select(ctlistopen)
@@ -114,11 +114,12 @@ def diva_scraper(website, countrylist, taglist):
 					okbutton=driver.find_element_by_name('OK')
 					time.sleep(0)  
 					okbutton.click()
-					print ('Found on diva-gis')
+					value='Found on Diva-GIS'
 				except:
 					# print('failed to input', country, tag)
-					print('Not Found on diva-gis') 
+					value=' NotFound on Diva-GIS'
 					pass
+			print(country,tag,'-',value)
 	except:
 		pass
 	driver.quit()
