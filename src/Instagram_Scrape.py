@@ -35,4 +35,3 @@ def username_check(username_list):
 		print (username, usernamevalue)
 	df=pd.DataFrame({"Username":usernamel,"IG Profile":usernamevaluelist})
 	return(df)
-		

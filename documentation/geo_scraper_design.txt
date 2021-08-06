@@ -27,9 +27,14 @@ Organization:
    
     -site_scraper.py
         - contains main scraping functions for standard sites
-        - main data scraping general layout:
-                - scrape data from given site, organize into pandas dataframe to be returned
+        - main data scraping func general layout:
+                - query passing
+                -  scrape data from given site, organize into pandas dataframe to be returned
                 - export csv from all scrapes; Shapefile type, region, category, source site
+        - downloading funcs
+            - if/or for passing whether to concat or not, if yes convert all dl to spacial dataframe
+            - organize all into subfolder
+        - organize data
    
     - downloader.py
         - contains funcs for downloading specific files (based on query) for each scraped source
