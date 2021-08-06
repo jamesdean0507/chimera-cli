@@ -114,12 +114,11 @@ def diva_scraper(website, countrylist, taglist):
 					okbutton=driver.find_element_by_name('OK')
 					time.sleep(0)  
 					okbutton.click()
-					value='Found on Diva-GIS'
+					print(country,tag,' Found on Diva-GIS')
 				except:
 					# print('failed to input', country, tag)
-					value=' NotFound on Diva-GIS'
+					print(country,tag,' Not Found on Diva-GIS')
 					pass
-			print(country,tag,'-',value)
 	except:
 		pass
 	driver.quit()
