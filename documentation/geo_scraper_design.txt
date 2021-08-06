@@ -42,7 +42,7 @@ Organization:
         - visualize dl process on command line (make it cute~!)
    
     - sites to scrape:
-        - https://www.diva-gis.org/
+        - https://www.diva-gis.org/Data
         - https://www.naturalearthdata.com/
         - https://ec.europa.eu/eurostat/web/gisco/geodata
         - https://data.humdata.org/search?ext_geodata=1&q=&ext_page_size=25
