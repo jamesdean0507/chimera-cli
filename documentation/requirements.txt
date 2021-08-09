@@ -8,3 +8,6 @@ requests
 webdriver-manager
 tqdm
 geopandas
+console-menu
+colorama
+termcolor
