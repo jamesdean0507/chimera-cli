@@ -46,6 +46,9 @@ Organization:
         - https://www.naturalearthdata.com/
         - https://ec.europa.eu/eurostat/web/gisco/geodata
         - https://data.humdata.org/search?ext_geodata=1&q=&ext_page_size=25
+        - http://www.poi-factory.com/poifiles/alpha (all are csv)
+            - http://www.poi-factory.com/poifiles 
+            - http://www.poi-factory.com/search/pfc
     
     - newdata_scraper.py
         - advanced search for specific information from search engine databases
