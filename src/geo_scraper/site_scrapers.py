@@ -59,6 +59,7 @@ def humdata_check_filter(item, section, driver):
 
 def humdata_scraper(website, countrylist, organizationlist, filetypelist, taglist):
 	chrome_options = Options()
+	# chrome_options.add_argument('--headless')
 	driver = webdriver.Chrome(ChromeDriverManager().install(), options=chrome_options)
 	driver.get(website)
 	time.sleep(1)
@@ -95,6 +96,7 @@ def humdata_scraper(website, countrylist, organizationlist, filetypelist, taglis
 
 def diva_scraper(website, countrylist, taglist):
 	chrome_options = Options()
+	# chrome_options.add_argument('--headless')
 	driver = webdriver.Chrome(ChromeDriverManager().install(), options=chrome_options)
 	try:
 		for country in countrylist:
@@ -123,11 +125,49 @@ def diva_scraper(website, countrylist, taglist):
 		pass
 	driver.quit()
 
-def scrape_sites(countrylist=['Denmark', 'Albania'], filetypelist=['CSV','Shapefile'], organizationlist=['Facebook','WorldPop'], taglist=['Roads', 'Inland water', 'weather and climate'], querylist=[], sitelist=['https://data.humdata.org/search?ext_geodata=1&q=&ext_page_size=25', 'https://www.diva-gis.org/GData']):
+def poi_scraper(website, countrylist,organizationlist,taglist,querylist):
+    chrome_options = Options()
+    # chrome_options.add_argument('--headless')
+    driver = webdriver.Chrome(ChromeDriverManager().install(), options=chrome_options)
+    matchlist=[]
+    driver.get(website)
+    time.sleep(1)
+    soup=BeautifulSoup(driver.page_source, 'html.parser')
+    links=soup.findAll('li')    
+
+    for link in links:
+        linktitle=link.get_text()
+        for tag in taglist:
+            if tag in linktitle:
+                matchlist.append(link)
+        for query in querylist:
+            if query in linktitle: 
+                matchlist.append(link)
+        for country in countrylist:
+            if country in linktitle:
+                matchlist.append(link)
+        for org in organizationlist:
+            if org in linktitle:
+                matchlist.append(link)
+    matchlist=list(dict.fromkeys(matchlist))
+    # print (matchlist)
+    regex = re.compile(r'">.*')
+    for x in matchlist:
+        pagelink=str(x)
+        pagelink=pagelink.replace('<li><a href="','')
+        pagelink=re.sub('">.*', '', pagelink)
+        driver.get('http://www.poi-factory.com'+pagelink)
+        time.sleep(0.1)
+	driver.quit()
+
+def scrape_sites(countrylist=['Denmark', 'Albania'], filetypelist=['CSV','Shapefile'], organizationlist=['Facebook','WorldPop'], taglist=['Roads', 'Inland water', 'weather and climate'], querylist=['gay', 'grocer', 'Restaurant'], sitelist=['https://data.humdata.org/search?ext_geodata=1&q=&ext_page_size=25', 'https://www.diva-gis.org/GData']):
 	for site in sitelist:
 		if 'humdata.org' in site:
 			humdata_scraper(site, countrylist, organizationlist, filetypelist, taglist)
 		if 'diva-gis' in site:
 			diva_scraper(site, countrylist, taglist)
+		if "poi-factory" in site:
+			poi_scraper(site, countrylist, organizationlist,taglist,querylist)
 
-scrape_sites()
+if __name__ == "__main__":
+	scrape_sites()
