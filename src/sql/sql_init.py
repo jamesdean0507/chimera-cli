@@ -24,7 +24,7 @@ class database:
         
     def query(con):
         query_df=pd.read_sql_query()
-        return(con, cur)
+        return(query_df)
     
     def close_db(con):
         con.close()
